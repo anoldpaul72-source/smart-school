@@ -12,6 +12,27 @@ putenv('APP_STORAGE_PATH=/tmp/storage');
 putenv('LOG_CHANNEL=stderr');
 putenv('LARAVEL_LOG_PATH=/tmp/storage/logs/laravel.log');
 
+if (empty($_ENV['SESSION_DRIVER']) && empty(getenv('SESSION_DRIVER'))) {
+    putenv('SESSION_DRIVER=cookie');
+    $_ENV['SESSION_DRIVER'] = 'cookie';
+}
+if (empty($_ENV['CACHE_STORE']) && empty(getenv('CACHE_STORE'))) {
+    putenv('CACHE_STORE=array');
+    $_ENV['CACHE_STORE'] = 'array';
+}
+if (empty($_ENV['CACHE_DRIVER']) && empty(getenv('CACHE_DRIVER'))) {
+    putenv('CACHE_DRIVER=array');
+    $_ENV['CACHE_DRIVER'] = 'array';
+}
+if (empty($_ENV['QUEUE_CONNECTION']) && empty(getenv('QUEUE_CONNECTION'))) {
+    putenv('QUEUE_CONNECTION=sync');
+    $_ENV['QUEUE_CONNECTION'] = 'sync';
+}
+if (empty($_ENV['DB_CONNECTION']) && empty(getenv('DB_CONNECTION'))) {
+    putenv('DB_CONNECTION=mongodb');
+    $_ENV['DB_CONNECTION'] = 'mongodb';
+}
+
 // Create required writable directories in /tmp for Vercel serverless environment
 $dirs = [
     '/tmp/storage',
