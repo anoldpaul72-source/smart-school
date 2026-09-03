@@ -31,9 +31,11 @@
   ],
   "env": {
     "APP_ENV": "production",
-    "APP_DEBUG": "false",
+    "APP_DEBUG": "true",
+    "APP_KEY": "base64:JA/hLAyh8U8DcTlqkVAIhW/QbUlgi+bDDL21iIdejKQ=",
     "APP_TIMEZONE": "UTC",
     "DB_CONNECTION": "mongodb",
+    "MONGODB_URI": "mongodb+srv://anolddb:%21%40Anold%402026@cluster0.4gdwci0.mongodb.net/smart-results?retryWrites=true&w=majority&appName=Cluster0",
     "DB_DATABASE": "smart-results",
     "APP_CONFIG_CACHE": "/tmp/config.php",
     "APP_EVENTS_CACHE": "/tmp/events.php",
@@ -43,6 +45,7 @@
     "VIEW_COMPILED_PATH": "/tmp",
     "CACHE_STORE": "array",
     "SESSION_DRIVER": "cookie",
-    "QUEUE_CONNECTION": "sync"
+    "QUEUE_CONNECTION": "sync",
+    "LOG_CHANNEL": "stderr"
   }
 }
