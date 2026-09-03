@@ -4,6 +4,14 @@
 error_reporting(E_ALL & ~E_DEPRECATED & ~E_USER_DEPRECATED & ~E_NOTICE);
 ini_set('display_errors', '0');
 
+// Set serverless environment flags
+$_ENV['VERCEL'] = '1';
+$_SERVER['VERCEL'] = '1';
+putenv('VERCEL=1');
+putenv('APP_STORAGE_PATH=/tmp/storage');
+putenv('LOG_CHANNEL=stderr');
+putenv('LARAVEL_LOG_PATH=/tmp/storage/logs/laravel.log');
+
 // Create required writable directories in /tmp for Vercel serverless environment
 $dirs = [
     '/tmp/storage',
@@ -23,6 +31,8 @@ foreach ($dirs as $dir) {
         @mkdir($dir, 0777, true);
     }
 }
+
+@touch('/tmp/storage/logs/laravel.log');
 
 // Forward Vercel requests to Laravel public/index.php
 require __DIR__ . '/../public/index.php';
