@@ -37,6 +37,7 @@
     "DB_CONNECTION": "mongodb",
     "MONGODB_URI": "mongodb+srv://anolddb:%21%40Anold%402026@cluster0.4gdwci0.mongodb.net/smart-results?retryWrites=true&w=majority&appName=Cluster0",
     "DB_DATABASE": "smart-results",
+    "APP_STORAGE_PATH": "/tmp/storage",
     "APP_CONFIG_CACHE": "/tmp/config.php",
     "APP_EVENTS_CACHE": "/tmp/events.php",
     "APP_PACKAGES_CACHE": "/tmp/packages.php",
